@@ -89,12 +89,13 @@ div{
 .datosCuenta{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 50%;
     width: 50%;
 }
 .datosCuenta h4{
     text-align: center;
+    width: 10rem;
 }
 .accionesCuenta{
     display: flex;

@@ -91,13 +91,14 @@ function CrearUsuario() {
 
                     //REGISTRO DE USUARIOS  (FIN)
 
-                    
+                    let usuarioActual,saldoActual; 
+                    let cambioSaldo;            
 
             //INICIO SESIÓN  (INICIO)
 let intentos = 0;
 function logIn() {
     
-    let usuarioActual,saldoActual;
+    /*  */
     let ingresaste = document.getElementById('monitor');
     /* let atmScreen = document.getElementById("mainScreen") */
     let aux = 0;
@@ -109,6 +110,8 @@ function logIn() {
             aux = 1;
             usuarioActual = cuentas[key].nombre;
             saldoActual = cuentas[key].saldo;
+
+            cambioSaldo =cuentas[key].nombre;
         }
     }
     if(aux === 1){
@@ -116,13 +119,13 @@ function logIn() {
         <div class="monitorUsario">
             <section class="datosCuenta">
                 <h4 id="mostrarUsuario">${usuarioActual}</h4>
-                <h4 id="mostrarsaldo">cuentas con ${saldoActual} </h4>
+                <h4 id="mostrarsaldo">saldo $ ${saldoActual} </h4>
             </section>
             <section class="accionesCuenta">
                 <input class="retirarDepositar" type="text">
-                <button >retirar</button>
+                <button onclick="retirando()">Retirar</button>
                 <input class="retirarDepositar" type="text">
-                <button>depositar</button>
+                <button onclick="depositando()">Depositar</button>
             </section>
         </div>`;
         /* mostrarDatosUsuario(); */
@@ -152,13 +155,13 @@ function logIn() {
 
                 //TECLADO CAJERO (INICIO)
 
-let operador;
+                let montoIndicado;
 let numero;
 function CapturarDatos(id){     //id es el parametro que recibe (donde el usuario da click)
     let imprimirTotal = document.getElementsByClassName('retirarDepositar');
     numero = Number(id);
-    operador = 1;
-    if(operador === 1)
+    
+    if(numero === undefined)
         {
             imprimirTotal[0].value = numero;
             imprimirTotal[1].value = numero;
@@ -171,9 +174,54 @@ function CapturarDatos(id){     //id es el parametro que recibe (donde el usuari
             imprimirTotal[0].value = imprimirTotal[0].value + numero;
             imprimirTotal[1].value = imprimirTotal[1].value + numero;
         }
+        return montoIndicado = Number(imprimirTotal[0].value);
 
 }
 
                 //TECLADO CAJERO (INICIO)
+
+
+
+                //RETIROS Y DEPOSITOS (INICIO)
+
+                let saldoArray;
+function retirando() {
+    /* let usuario = document.getElementById("mostrarsaldo");
+    usuario.innerHTML = `<h4 id="mostrarUsuario">${saldoActual - montoIndicado}</h4>`; */
+    if (saldoActual - montoIndicado < 10) {
+        alert("no puedes dejar tu cuenta con menos de $10");
+    }else{
+        saldoArray = saldoActual - montoIndicado;
+        let usuario = document.getElementById("mostrarsaldo");
+        usuario.innerHTML = `<h4 id="mostrarUsuario">saldo $${saldoArray}</h4>`;
+        for (const iterator in cuentas) {
+            if(cambioSaldo === cuentas[iterator].nombre){
+                cuentas[iterator].saldo = saldoArray;
+            }
+        }
+    }
+}
+function depositando() {
+    
+    if (saldoActual + montoIndicado > 990) {
+        alert("tu cuenta no puede exceder los $990");
+    }
+    else{
+        saldoArray = saldoActual + montoIndicado;
+        let usuario = document.getElementById("mostrarsaldo");
+        usuario.innerHTML = `<h4 id="mostrarUsuario">saldo $${saldoArray}</h4>`;
+        for (const iterator in cuentas) {
+            if(cambioSaldo === cuentas[iterator].nombre){
+                cuentas[iterator].saldo = saldoArray;
+            }
+        }
+    }
+}
+
+
+                //RETIROS Y DEPOSITOS (FIN)
+
+
+
 
 
