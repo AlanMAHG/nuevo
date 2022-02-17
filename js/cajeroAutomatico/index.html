@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- bootstrap -->
+
+
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Bank</h1>
+        </header>
+        <section class="principal">
+            <section class="screen">
+                <div class="container" id="monitor">
+                    <article class="botonRegistro">
+                        <button type="button" id="signUpButton" class="btn btn-primary" onclick="userSignUp()">Sign up</button>
+                    </article>
+                    <article class="pantallaCajero">
+                        <form action="#" class="form">
+                            <div class="form-group">
+                                <label for="email">Usuario</label>
+                                <input type="text" name="usuario" id="usuario" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+                            <button class="btn btn-primary" type="button" class="" onclick="logIn('user','pass')">Login</button> <!-- type="submit" -->
+                        </form>
+                    </article>
+                </div>
+                <article class="imagenCajero">
+                    <img src="imagenes/imgCajero.png" alt="">
+                </article>
+            </section>
+            <section class="tablero">
+                <button onclick="CapturarDatos('7')">7</button>
+                <button onclick="CapturarDatos('8')">8</button>
+                <button onclick="CapturarDatos('9')">9</button>
+                <button onclick="CapturarDatos('4')">4</button>
+                <button onclick="CapturarDatos('5')">5</button>
+                <button onclick="CapturarDatos('6')">6</button>
+                <button onclick="CapturarDatos('1')">1</button>
+                <button onclick="CapturarDatos('2')">2</button>
+                <button onclick="CapturarDatos('3')">3</button>
+                <button onclick="CapturarDatos('0')">0</button>
+                <button onclick="CapturarDatos('c')">Drop</button>
+            </section>
+        </section>
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

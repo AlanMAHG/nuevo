@@ -1,0 +1,117 @@
+body{
+    background-color: gray;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    height: 100vh;
+    width: 100vw;
+}
+main{
+    background-color: darkgrey;
+    padding: 5px 15px 5px 15px;
+}
+header{
+    background-color: blue;
+    height: 10%;
+    width: 100%;
+
+}
+header h1{
+    color: white;
+    text-align: center;
+}
+.pricipal{
+    width: 100%;
+    height: 30%;
+}
+.screen{
+    display: flex;
+    flex-direction: row;
+}
+.tablero{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        ". . . ."
+        ". . . ."
+        ". . . ."
+        ". . . ."; 
+    /* width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    background-color: #2a09e638; */
+}
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+.botonRegistro{
+    display: flex;
+    justify-content: center;
+    height: 20%;
+    width: 100%;
+}
+#signUpButton{
+
+    padding: 0 auto;
+    text-align: start;
+}
+.pantallaCajero{
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}
+.imagenCajero{
+    height: 100%;
+    width: 50%;
+}
+
+
+            /* ESTILOS PANTA DE USUARIO */
+
+
+
+.monitorUsario{
+    background-color: aqua;
+    border-radius: 15%;
+    height: 100%;
+    width: 100%;
+}
+.datosCuenta{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50%;
+    width: 50%;
+}
+.datosCuenta h4{
+    text-align: center;
+}
+.accionesCuenta{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 50%;
+    width: 100%;
+}
+div section button{
+    width: 15rem;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
